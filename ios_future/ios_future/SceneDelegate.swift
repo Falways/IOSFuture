@@ -21,7 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
-
+        // UI线程沉睡2.5s
+        Thread.sleep(until: Date.init(timeIntervalSinceNow: TimeInterval.init(2.5))) //延长3秒
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)

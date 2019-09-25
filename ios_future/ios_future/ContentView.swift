@@ -9,14 +9,27 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello World")
-        
-    }
+	@State var totalClicked: Int = 0
+	var body : some View{
+		// VStack: 竖向的， HStack: 横向的
+		VStack {
+			    Text("点击次数为：\(totalClicked)").font(.title)
+				Spacer()
+				Button(action: {
+					self.totalClicked = self.totalClicked + 1
+					print("Button was be clicked")
+				}) {
+					Text("Increment Total")
+				}.padding(.all)
+			Button(action:{
+				// NavigationLink()
+			}){Text("ToResource")}
+		}.padding(.all,40)
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+		ContentView()
     }
 }
